@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex; /*박스를 자유롭게 정렬*/
+            justify-content: center; /*가로 중앙*/
+            align-items: center; /*세로 중앙*/
+            height: 100vh; /*화면 전체 높이*/
+            background-color: #f0f0f0;
+        }
+
+        .box {
+            background-color: pink;
+            padding: 40px; /*글자와 상자 간에*/
+            font-size: 24px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+<!-- container는 정렬 역할(집[전체공간]), box는 실제 내용(소파, 탁자(보여줄 것)) -->
+    <div class="container"> 
+        <div class="box">가운데 박스야 😎</div>
+    </div>
+
+</body>
+</html>

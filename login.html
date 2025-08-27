@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang = 'ko'>
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인 페이지</title>
+        <style>
+        /* 전체 배경과 정렬 설정 */
+            body{ 
+                font-family : Arial,sans-serif;
+                background: linear-gradient(to right,lemonchiffon,rgba(95, 170, 73, 0.667));
+                display:flex;
+                justify-content: center;
+                align-items:center;
+                height:100vh; 
+                margin:0;
+                /* height는 화면 전체 높이, margin은 화면 가장자리와 상자 간의 여백 */
+            }
+
+            /* 로그인 박스 스타일 */
+        
+            .login-box{
+                background:white; /* 흰 배경 */
+                padding:30px 40px; /* 안쪽 여백 */
+                border-radius:12px; /*둥근 테두리*/
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2); /*그림자*/
+                text-align:center;
+            }
+
+            /* 로그인 제목 스타일 */
+            .login-box h1{ 
+                margin-bottom:25px;
+                color:#454545;
+            }
+
+            /* 아이디/비번 입력칸 스타일 */
+            input{
+                width:100%;
+                padding:12px;
+                margin-bottom:15px;
+                border: 1px solid #ccc;
+                border-radius:6px;
+                font-size:16px;
+            }
+
+            /* 로그인 버튼 스타일 */
+            button{
+                width: 100%;
+                padding:12px;
+                background-color:#cbe6c7;
+                color:darkslategray;
+                border:none;
+                border-radius:6px;
+                font-size:16px;
+                cursor:pointer;
+            }
+
+            /* 버튼에 마우스 올릴 때 스타일 */
+            button:hover{
+                background-color:#8fb78f;
+            }
+
+            /* 결과 메세지 스타일 */
+            #login-result{
+                margin-top:15px;
+                font-weight:bold;
+            }
+        </style>
+    </head>
+    <body> 
+        <form class="login-box" onsubmit="login(event)">
+            <h1>로그인</h1>
+            <input type="text" id="username" placeholder="아이디 입력" />
+            <input type="password" id="password" placeholder="비밀번호 입력" />
+            <button type="submit">🌿그린로그 속으로🌱</button>
+            <p id="login-result"></p>
+        </form>
+
+        <script>
+            function login(event){
+                event.preventDefault(); /* 새로고침 방지*/
+
+                const inputId=document.getElementById('username').value;
+                const inputPw=document.getElementById('password').value;
+
+                const correctId = 'greenlog';
+                const correctPw = 'password';
+
+                const result = document.getElementById('login-result');
+
+                if(inputId==correctId && inputPw ==correctPw){
+                    result.innerText='✅ 로그인 성공';
+                    result.style.color = 'green';
+                    window.location.href = "greenlog.html"
+
+                }else{
+                    result.innerText='❌ 아이디 또는 비밀번호가 틀렸습니다.';
+                    result.style.color = 'red';
+                }
+            }
+        </script>
+    </body>
+</html>
